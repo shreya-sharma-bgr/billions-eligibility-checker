@@ -1,56 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Billions Network • Result</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka+One&family=Montserrat:wght@700;800&family=Poppins:wght@600&family=Space+Mono&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/animations.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billions • Eligibility Result</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <div id="floating-layer" aria-hidden="true">
-    <img src="assets/images/bill-token.png" class="floating token token-1" alt="">
-    <img src="assets/images/bill-token-alt.png" class="floating token token-2" alt="">
-    <img src="assets/images/bill-token.png" class="floating token token-3" alt="">
-    <img src="assets/images/bill-token-alt.png" class="floating token token-4" alt="">
-    <img src="assets/images/bill-token.png" class="floating token token-5" alt="">
-    <img src="assets/images/bill-token-alt.png" class="floating token token-6" alt="">
+<div id="floating-layer">
+    <img src="assets/images/bill-token.png" class="floating token-1">
+    <img src="assets/images/bill-token-alt.png" class="floating token-2">
+    <img src="assets/images/bill-token.png" class="floating token-3">
+    <img src="assets/images/bill-logo.png" class="floating logo-bg">
+</div>
 
-    <img src="assets/images/bill-logo.png" class="floating logo-bg" alt="">
-  </div>
-
-  <main class="container result-page">
+<div class="container">
 
     <header class="page-header">
-      <div class="logo-wrap">
-        <img src="assets/images/bill-logo.png" class="logo-icon" alt="Billions logo">
-        <h1 class="main-title glow">Billions Network</h1>
-        <p class="sub-title">Eligibility Checker • Built by Shreya</p>
-      </div>
+        <div class="logo-wrap">
+            <img src="assets/images/bill-logo.png" class="logo-icon" alt="">
+            <h1 class="main-title glow">Eligibility Result</h1>
+        </div>
     </header>
 
-    <section class="result-area" id="resultArea">
-      <div class="result-card">
-        <div class="result-image-wrap">
-          <img id="resultImage" class="result-image" src="">
-        </div>
+    <section class="result-area">
+        <div class="result-card">
+            <div class="result-image-wrap">
+                <img id="resultImage" class="result-image" src="">
+            </div>
 
-        <h2 id="resultText" class="result-text"></h2>
-        <p id="resultNote" class="result-note glow-soft"></p>
+            <h2 id="resultTitle" class="result-text glow"></h2>
+            <p id="resultNote" class="result-note"></p>
 
-        <div class="actions">
-          <a href="index.html" class="btn-secondary">Check Again</a>
+            <a href="index.html" class="btn-secondary">Check Again</a>
         </div>
-      </div>
     </section>
 
-    <footer class="footer-note">Made with ❤️ • Shreya</footer>
-  </main>
+    <footer class="footer">
+        <p class="footer-note">Made with ❤️ • Shreya</p>
+    </footer>
 
-  <script src="js/result.js"></script>
+</div>
+
+<script src="js/result.js"></script>
 </body>
 </html>
