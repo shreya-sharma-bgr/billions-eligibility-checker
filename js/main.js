@@ -1,4 +1,4 @@
-main.jsfunction checkEligibility(){
+function checkEligibility(){
     const address = document.getElementById("walletInput").value.trim();
 
     if(address === ""){
