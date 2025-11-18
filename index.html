@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Billions Network • Eligibility Checker</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka+One&family=Montserrat:wght@700;800&family=Poppins:wght@600&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Floating tokens -->
+  <div id="floating-layer" aria-hidden="true">
+    <img src="assets/images/bill-token.png" class="floating token token-1" alt="">
+    <img src="assets/images/bill-token-alt.png" class="floating token token-2" alt="">
+    <img src="assets/images/bill-token.png" class="floating token token-3" alt="">
+    <img src="assets/images/bill-token-alt.png" class="floating token token-4" alt="">
+    <img src="assets/images/bill-token.png" class="floating token token-5" alt="">
+    <img src="assets/images/bill-token-alt.png" class="floating token token-6" alt="">
+
+    <img src="assets/images/bill-logo.png" class="floating logo-bg" alt="">
+  </div>
+
+  <main class="container">
+
+    <header class="page-header">
+      <div class="logo-wrap">
+        <img src="assets/images/bill-logo.png" class="logo-icon" alt="Billions logo">
+        <h1 class="main-title glow">Billions Network</h1>
+        <p class="sub-title">Eligibility Checker • Built by Shreya</p>
+      </div>
+    </header>
+
+    <section class="hero">
+      <p class="hero-desc">Enter your airdrop wallet address below (this checker is 99% nonsense, 100% fun).</p>
+
+      <div class="input-row">
+        <input id="wallet" class="wallet-input" type="text" placeholder="0x1234... (paste your wallet address)" autocomplete="off" />
+        <button id="checkBtn" class="btn-primary">Check Eligibility</button>
+      </div>
+
+      <p class="hint">Tip: use any address — results are for fun 😉</p>
+    </section>
+
+    <footer class="footer-note">Made with ❤️ • Shreya</footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
