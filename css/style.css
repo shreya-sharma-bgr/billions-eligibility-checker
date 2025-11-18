@@ -1,5 +1,6 @@
-/* style.css - new centered layout, gradient background, soft glow */
-
+/* --------------------------------------------------
+   GLOBAL VARIABLES
+-------------------------------------------------- */
 :root{
   --bg1: #0046fe;
   --bg2: #0a63ff;
@@ -12,8 +13,12 @@
   --maxWidth: 980px;
 }
 
-/* Reset */
-*{ box-sizing:border-box; margin:0; padding:0; }
+/* RESET */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 html,body{ height:100%; }
 
 body{
@@ -23,29 +28,33 @@ body{
   background-size: 200% 200%;
   animation: bgMove 10s ease-in-out infinite;
   overflow-x:hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* smooth gradient movement */
+/* GRADIENT ANIMATION */
 @keyframes bgMove{
   0%{ background-position:0% 0%; }
   50%{ background-position:100% 100%; }
   100%{ background-position:0% 0%; }
 }
 
-/* main container */
+
+/* --------------------------------------------------
+   CONTAINER LAYOUT
+-------------------------------------------------- */
 .container{
   max-width:var(--maxWidth);
   margin:0 auto;
   padding:60px 22px 100px;
   text-align:center;
-  position:relative;
-  z-index:2;
   min-height:100vh;
+  display:flex;
+  flex-direction:column;
 }
 
-/* header */
+
+/* --------------------------------------------------
+   HEADER
+-------------------------------------------------- */
 .page-header{
   display:flex;
   justify-content:center;
@@ -73,7 +82,7 @@ body{
   letter-spacing:0.5px;
 }
 
-/* soft glow effect */
+/* Glow effect */
 .glow{
   text-shadow:
     0 0 14px rgba(255,255,255,0.45),
@@ -83,10 +92,12 @@ body{
 .sub-title{
   font-size: clamp(14px, 2vw, 18px);
   color:rgba(255,255,255,0.92);
-  margin-bottom: 10px;
 }
 
-/* hero */
+
+/* --------------------------------------------------
+   HERO SECTION
+-------------------------------------------------- */
 .hero{
   margin-top:28px;
   display:flex;
@@ -97,12 +108,13 @@ body{
 
 .hero-desc{
   max-width:700px;
-  font-size: 17px;
+  font-size:17px;
   opacity:0.95;
-  margin-bottom: 16px;
+  margin-bottom:5px;
 }
 
-/* input + button stacked & centered */
+
+/* INPUT + BUTTON */
 .input-row{
   display:flex;
   flex-direction:column;
@@ -122,6 +134,10 @@ body{
   outline:none;
   text-align:center;
   transition:0.2s;
+}
+
+.wallet-input::placeholder{
+  color:rgba(255,255,255,0.4);
 }
 
 .wallet-input:focus{
@@ -146,23 +162,10 @@ body{
   transform:translateY(-3px);
 }
 
-.btn-secondary{
-  display:inline-block;
-  background:rgba(255,255,255,0.1);
-  padding:12px 20px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.12);
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
 
-.hint{
-  font-size:13px;
-  opacity:0.9;
-}
-
-/* result card */
+/* --------------------------------------------------
+   RESULT PAGE
+-------------------------------------------------- */
 .result-area{
   margin-top:20px;
   display:flex;
@@ -177,6 +180,7 @@ body{
   width:100%;
   backdrop-filter:blur(16px);
   box-shadow:0 12px 40px rgba(0,0,0,0.35);
+  text-align:center;
 }
 
 .result-image-wrap{
@@ -206,15 +210,143 @@ body{
   color:rgba(255,255,255,0.95);
 }
 
-/* footer */
+.btn-secondary{
+  display:inline-block;
+  margin-top:22px;
+  background:rgba(255,255,255,0.1);
+  padding:12px 20px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.12);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+
+/* --------------------------------------------------
+   FOOTER (Pinned Bottom)
+-------------------------------------------------- */
+.footer{
+  margin-top:auto;
+  padding-bottom:40px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.hint{
+  font-size:13px;
+  opacity:0.9;
+}
+
 .footer-note{
-  margin-top:40px;
   font-size:13px;
   opacity:0.75;
 }
 
-/* ⭐ MOBILE IMPROVEMENTS */
-@media(max-width: 720px){
+
+/* --------------------------------------------------
+   FLOATING TOKENS — CLEAN 3 TOKEN LAYOUT
+-------------------------------------------------- */
+#floating-layer{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+.floating{
+  position:absolute;
+  opacity:0.92;
+  will-change: transform;
+}
+
+/* Token positions */
+.token-1{
+  top:10%;
+  left:6%;
+  width:110px;
+  animation:float1 8s infinite ease-in-out;
+}
+
+.token-2{
+  top:15%;
+  right:6%;
+  width:120px;
+  animation:float2 10s infinite ease-in-out;
+}
+
+.token-3{
+  bottom:14%;
+  left:10%;
+  width:115px;
+  animation:float3 9s infinite ease-in-out;
+}
+
+
+/* Background BIG logo */
+.logo-bg{
+  top:10%;
+  left:50%;
+  width:260px;
+  transform:translateX(-50%);
+  opacity:0.06;
+  animation:rotateLogo 18s infinite linear;
+}
+
+
+/* FLOAT ANIMATIONS */
+@keyframes float1{
+  0%{ transform:translate(0,0); }
+  50%{ transform:translate(16px,-20px); }
+  100%{ transform:translate(0,0); }
+}
+
+@keyframes float2{
+  0%{ transform:translate(0,0); }
+  50%{ transform:translate(-20px,-26px); }
+  100%{ transform:translate(0,0); }
+}
+
+@keyframes float3{
+  0%{ transform:translate(0,0); }
+  50%{ transform:translate(14px,-18px); }
+  100%{ transform:translate(0,0); }
+}
+
+@keyframes rotateLogo{
+  from{ transform:translateX(-50%) rotate(0deg); }
+  to{ transform:translateX(-50%) rotate(360deg); }
+}
+
+
+/* POP & SHAKE on result image */
+.result-image.pop{
+  animation:popIn 700ms cubic-bezier(.2,1.2,.2,1);
+}
+@keyframes popIn{
+  0%{ transform:scale(0.6); opacity:0; }
+  60%{ transform:scale(1.08); opacity:1; }
+  100%{ transform:scale(1); opacity:1; }
+}
+
+.result-image.shake{
+  animation:shakeIt 700ms ease-in-out;
+}
+@keyframes shakeIt{
+  0%{ transform:translateX(0); }
+  25%{ transform:translateX(-12px); }
+  50%{ transform:translateX(12px); }
+  75%{ transform:translateX(-8px); }
+  100%{ transform:translateX(0); }
+}
+
+
+/* --------------------------------------------------
+   MOBILE LAYOUT
+-------------------------------------------------- */
+@media(max-width:720px){
 
   .container{
     padding-top:50px;
@@ -228,7 +360,6 @@ body{
 
   .main-title{
     font-size:26px;
-    margin-bottom:6px;
   }
 
   .sub-title{
@@ -241,11 +372,6 @@ body{
     margin-bottom:20px;
   }
 
-  .input-row{
-    gap:14px;
-    margin-top:12px;
-  }
-
   .wallet-input{
     padding:12px 16px;
     font-size:15px;
@@ -254,27 +380,14 @@ body{
   .btn-primary{
     padding:12px;
     font-size:15px;
-    width:100%;
   }
 
-  .hint{
-    margin-top:18px;
-    margin-bottom:26px;
-  }
+  /* Mobile token sizes */
+  .token-1{ width:60px; top:14%; left:5%; }
+  .token-2{ width:70px; top:18%; right:5%; }
+  .token-3{ width:65px; bottom:22%; left:9%; }
 
-  /* Smaller floating tokens */
-  .token-1{ width:65px; top:12%; left:4%; }
-  .token-2{ width:75px; top:16%; right:5%; }
-  .token-3{ width:60px; bottom:20%; left:8%; }
-  .token-4{ width:75px; bottom:18%; right:8%; }
-  .token-5{ width:55px; top:60%; left:46%; }
-  .token-6{ width:70px; top:72%; right:26%; }
-
-  .logo-bg{
-    width:180px;
-    top:18%;
-    opacity:0.06;
-  }
+  .logo-bg{ width:160px; top:20%; opacity:0.05; }
 
   .result-image-wrap{
     width:200px;
@@ -287,8 +400,7 @@ body{
     padding:0 10px;
   }
 
-  .footer-note{
-    margin-top:40px;
-    font-size:12px;
+  .footer{
+    padding-bottom:60px;
   }
 }
