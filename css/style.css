@@ -1,4 +1,4 @@
-
+/* style.css - new centered layout, gradient background, soft glow */
 
 :root{
   --bg1: #0046fe;
@@ -27,7 +27,7 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* soft moving gradient */
+/* smooth gradient movement */
 @keyframes bgMove{
   0%{ background-position:0% 0%; }
   50%{ background-position:100% 100%; }
@@ -38,7 +38,7 @@ body{
 .container{
   max-width:var(--maxWidth);
   margin:0 auto;
-  padding:40px 22px 80px;
+  padding:60px 22px 100px;
   text-align:center;
   position:relative;
   z-index:2;
@@ -68,7 +68,7 @@ body{
 
 .main-title{
   font-family:'Montserrat', sans-serif;
-  font-size: clamp(26px, 4vw, 44px);
+  font-size: clamp(28px, 5vw, 44px);
   font-weight:800;
   letter-spacing:0.5px;
 }
@@ -83,6 +83,7 @@ body{
 .sub-title{
   font-size: clamp(14px, 2vw, 18px);
   color:rgba(255,255,255,0.92);
+  margin-bottom: 10px;
 }
 
 /* hero */
@@ -98,6 +99,7 @@ body{
   max-width:700px;
   font-size: 17px;
   opacity:0.95;
+  margin-bottom: 16px;
 }
 
 /* input + button stacked & centered */
@@ -112,8 +114,8 @@ body{
 .wallet-input{
   background:rgba(255,255,255,0.12);
   border:1px solid rgba(255,255,255,0.15);
-  padding:14px 18px;
-  border-radius:14px;
+  padding:15px 18px;
+  border-radius:16px;
   font-family:'Space Mono', monospace;
   font-size:16px;
   color:var(--white);
@@ -123,7 +125,7 @@ body{
 }
 
 .wallet-input:focus{
-  box-shadow:0 0 16px rgba(255,255,255,0.25);
+  box-shadow:0 0 18px rgba(255,255,255,0.25);
   background:rgba(255,255,255,0.18);
 }
 
@@ -189,7 +191,6 @@ body{
   object-fit:contain;
 }
 
-/* result text */
 .result-text{
   margin-top:16px;
   font-family:'Fredoka One';
@@ -212,9 +213,82 @@ body{
   opacity:0.75;
 }
 
-/* mobile fixes */
-@media(max-width:720px){
-  .logo-icon{ width:70px; }
-  .result-image-wrap{ width:220px; height:220px; }
-  .result-note{ font-size:18px; }
+/* ⭐ MOBILE IMPROVEMENTS */
+@media(max-width: 720px){
+
+  .container{
+    padding-top:50px;
+    padding-bottom:80px;
+  }
+
+  .logo-icon{
+    width:60px;
+    margin-bottom:6px;
+  }
+
+  .main-title{
+    font-size:26px;
+    margin-bottom:6px;
+  }
+
+  .sub-title{
+    font-size:14px;
+    margin-bottom:18px;
+  }
+
+  .hero-desc{
+    font-size:15px;
+    margin-bottom:20px;
+  }
+
+  .input-row{
+    gap:14px;
+    margin-top:12px;
+  }
+
+  .wallet-input{
+    padding:12px 16px;
+    font-size:15px;
+  }
+
+  .btn-primary{
+    padding:12px;
+    font-size:15px;
+    width:100%;
+  }
+
+  .hint{
+    margin-top:18px;
+    margin-bottom:26px;
+  }
+
+  /* Smaller floating tokens */
+  .token-1{ width:65px; top:12%; left:4%; }
+  .token-2{ width:75px; top:16%; right:5%; }
+  .token-3{ width:60px; bottom:20%; left:8%; }
+  .token-4{ width:75px; bottom:18%; right:8%; }
+  .token-5{ width:55px; top:60%; left:46%; }
+  .token-6{ width:70px; top:72%; right:26%; }
+
+  .logo-bg{
+    width:180px;
+    top:18%;
+    opacity:0.06;
+  }
+
+  .result-image-wrap{
+    width:200px;
+    height:200px;
+  }
+
+  .result-note{
+    font-size:17px;
+    line-height:1.4;
+    padding:0 10px;
+  }
+
+  .footer-note{
+    margin-top:40px;
+    font-size:12px;
+  }
 }
